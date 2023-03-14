@@ -78,7 +78,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        code={post.frontmatter.code}
+        code={post.fields.code}
       />
     </Layout>
   );
@@ -101,7 +101,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        code
         tags
       }
     }
