@@ -11,6 +11,7 @@ export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
+  code,
   tags,
   title,
   helmet,
@@ -52,6 +53,7 @@ BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  code: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
 };
@@ -76,6 +78,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        code={post.frontmatter.code}
       />
     </Layout>
   );
@@ -98,6 +101,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        code
         tags
       }
     }
